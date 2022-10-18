@@ -16,7 +16,7 @@ namespace PlandoDemo.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllPeople()
+        public IActionResult Index()
         {
             return Ok(_personRepo.GetPeople());
         }
@@ -35,6 +35,13 @@ namespace PlandoDemo.API.Controllers
             _personRepo.Update(person);
 
             return Ok();
+        }
+
+        [HttpGet("get-person/{id}")]
+        public IActionResult GetPerson(int id)
+        {
+            Person person = _personRepo.GetPerson(id);
+            return Ok(person);
         }
     }
 }

@@ -8,5 +8,6 @@ namespace PlandoDemo.API.Repositories
         IEnumerable<Person> GetPeople();
         void Add(Person person);
         void Update(Person person);
+        Person GetPerson(int id);
     }
 }

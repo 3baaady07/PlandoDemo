@@ -25,10 +25,24 @@ namespace PlandoDemo.API.Repositories
             return _context.People.ToList();
         }
 
+        public Person GetPerson(int id)
+        {
+            return _context.People.Where(p => p.Id == id).FirstOrDefault();
+        }
+
         public void Update(Person person)
         {
-            _context.People.Update(person);
-            _context.SaveChanges();
+            try
+            {
+                _context.People.Update(person);
+                _context.SaveChanges();
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
