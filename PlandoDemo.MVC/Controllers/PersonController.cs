@@ -31,7 +31,7 @@ namespace PlandoDemo.MVC.Controllers
         public async Task<IActionResult> AddPersonAsync(Person person)
         {
             await _httpClient.AddPersonToAPIAsync(person);
-            return Redirect("Index");
+            return Redirect("[controller]");
         }
 
         [HttpGet("get-person")]
@@ -52,7 +52,7 @@ namespace PlandoDemo.MVC.Controllers
         public async Task<IActionResult> UpdateAsync(Person person)
         {
             await _httpClient.UpdatePersonAsync(person);
-            return Redirect("Index");
+            return Redirect("[controller]");
         }
     }
 }

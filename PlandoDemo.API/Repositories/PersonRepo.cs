@@ -32,6 +32,7 @@ namespace PlandoDemo.API.Repositories
 
         public void Update(Person person)
         {
+            System.Console.WriteLine("In API Update");
             try
             {
                 _context.People.Update(person);
